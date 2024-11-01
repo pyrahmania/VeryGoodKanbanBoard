@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin: 0;
+}
+
+/* Title Styling */
+.app-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem; /* 50% larger than previous 2rem */
+    margin-bottom: 40px; /* Spacing between title and app */
+    text-align: center;
+    color: #fff;
+}
+
+.board {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px; /* Equal spacing from the title */
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    font-weight: bold;
+}
+
+.lanes {
+    display: flex;
+    gap: 20px;
+}
+
+.lane {
+    flex: 1;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.lane-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.average-age {
+    font-size: 0.8em;
+    color: #333;
+    font-style: italic;
+}
+
+.wip-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.wip-container label {
+    font-size: 0.9em;
+    color: #333;
+}
+
+#doing-lane #wip-limit {
+    width: 60px;
+    padding: 4px;
+    font-size: 0.9em;
+    border: 1px solid #333;
+    border-radius: 4px;
+    text-align: center;
+    appearance: textfield;
+    color: black; /* Ensure the input text color stays black */
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.task {
+    padding: 10px;
+    padding-bottom: 25px; /* Extra padding at the bottom for timestamp */
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: move;
+    color: #333;
+    position: relative;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.timestamp {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 0.7em; /* 50% smaller */
+    color: rgba(0, 0, 0, 0.5); /* Lighter shade */
+    font-style: italic;
+}
+
+.is-dragging {
+    opacity: 0.7;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wip-exceeded {
+    background-color: rgba(255, 0, 0, 0.6); /* Red background for exceeding WIP limit */
+    color: white; /* Make all text white in the column */
+}
+
+.wip-exceeded .lane-header h2,
+.wip-exceeded .lane-header .average-age,
+.wip-exceeded .wip-container label {
+    color: white; /* Set header, WIP label, and aging counter to white */
+}
+
+#doing-lane .wip-exceeded #wip-limit {
+    color: black; /* Ensure the WIP limit input number stays black */
+}
